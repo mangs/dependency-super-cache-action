@@ -1,22 +1,24 @@
-name: mangs/simple-release-notes-action
+name: mangs/node-modules-super-cache-action
 author: Eric L. Goldstein
-description: GitHub Action that auto-publishes release notes using a very simple-to-follow set of rules
+description: GitHub Action that is simple and greatly improves node_modules cache performance over actions/cache
 inputs:
-  changelog_path:
-    default: "./CHANGELOG.md"
-    description: Path to the target changelog file
+  node_modules_path:
+    default: "./node_modules"
+    description: Path to one or more node_modules directories
     required: false
-  github_token:
-    description: GitHub authentication token used to authenticate on behalf of GitHub Actions
-    required: true
-  packagejson_path:
-    default: "./package.json"
-    description: Path to the target package.json file
-    required: false
-  tag_prefix:
-    default: v
-    description: Prefix used to create the tag - the concatenation of this value and the version number from package.json, in that order
-    required: false
+outputs:
+  cache-hit:
+    description: A boolean value indicating if a match was found in the repository's cache
+    value: ${{ steps.npm-cache.outputs.cache-hit }}
 runs:
-  using: node16
-  main: "./scripts/publishReleaseNotes.mjs"
+  using: composite
+  steps:
+    - name: Capture NPM version number
+      id: npm-capture
+      run: echo "::set-output name=version-number::$(npm -v)"
+      shell: bash
+    - uses: actions/cache@v3
+      id: npm-cache
+      with:
+        path: ${{ inputs.node_modules_path }}
+        key: ${{ runner.os }}-npm-v${{ steps.npm-capture.outputs.version-number }}-${{ hashFiles('./package-lock.json') }}
