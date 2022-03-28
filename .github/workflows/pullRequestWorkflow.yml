@@ -9,7 +9,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "16.14.2"
-      - id: super-cache
+      - name: mangs/node-modules-super-cache-action
+        id: super-cache
         uses: ./
       - if: steps.super-cache.outputs.cache-hit != 'true'
         run: npm ci
