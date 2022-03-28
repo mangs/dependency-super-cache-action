@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.2
+
+- Shorten action description to under 125 characters so it can be published to the GitHub Marketplace
+
 ## 2.0.1
 
 - Make project description more accurate
