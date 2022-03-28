@@ -1,6 +1,6 @@
 # `mangs/dependency-super-cache-action`
 
-GitHub Action that is simple and greatly improves `node_modules` cache performance over `actions/cache`'s default recommendations
+GitHub Action that is simple and greatly improves dependency cache performance over `actions/cache` for Node.js projects
 
 ## Simple Example
 
