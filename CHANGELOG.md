@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.3
+
+- Update the readme to reference the correct action version; `v1` was mistakenly referenced instead of `v2`
+
 ## 2.0.2
 
 - Shorten action description to under 125 characters so it can be published to the GitHub Marketplace

@@ -9,7 +9,7 @@ Simple GitHub Action that improves dependency cache performance over `actions/ca
   with:
     node-version: "16.14.2"
 - id: super-cache
-  uses: mangs/dependency-super-cache-action@v1
+  uses: mangs/dependency-super-cache-action@v2
 - if: steps.super-cache.outputs.cache-hit != 'true'
   run: npm ci
 ```
@@ -21,7 +21,7 @@ Simple GitHub Action that improves dependency cache performance over `actions/ca
   with:
     node-version: "16.14.2"
 - id: super-cache
-  uses: mangs/dependency-super-cache-action@v1
+  uses: mangs/dependency-super-cache-action@v2
   with:
     dependencies_to_cache: |
       ./.eslintcache
