@@ -1,6 +1,6 @@
 name: mangs/dependency-super-cache-action
 author: Eric L. Goldstein
-description: GitHub Action that is simple and greatly improves dependency cache performance over actions/cache for Node.js projects
+description: GitHub Action that is simple and greatly improves dependency cache performance over actions/cache's recommendations for Node.js projects
 inputs:
   dependencies_to_cache:
     default: "./node_modules"

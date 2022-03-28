@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1
+
+- Make project description more accurate
+
 ## 2.0.0
 
 - Change action name from `node-modules-super-cache-action` to `dependency-super-cache-action` to reflect its use beyond just caching `node_modules`
