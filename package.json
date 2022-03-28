@@ -1,0 +1,40 @@
+{
+  "name": "node-modules-super-cache-action",
+  "version": "1.0.0",
+  "author": "Eric L. Goldstein",
+  "description": "GitHub Action that is simple and greatly improves node_modules cache performance over actions/cache",
+  "keywords": [
+    "cache",
+    "github action",
+    "github",
+    "performance",
+    "simple"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mangs/node-modules-super-cache-action.git"
+  },
+  "engines": {
+    "node": ">=16.13.0"
+  },
+  "scripts": {
+    "delete:node_modules": "rm -rf node_modules",
+    "delete:package-lock": "rm -f package-lock.json",
+    "format:code": "prettier --write --no-editorconfig .",
+    "format:code:json": "prettier --write --no-editorconfig \"**/*.json\"",
+    "format:code:markdown": "prettier --write --no-editorconfig \"**/*.md\"",
+    "format:code:yaml": "prettier --write --no-editorconfig \"**/*.yml\"",
+    "list:todo-comments:ripgrep": "node_modules/@vscode/ripgrep/bin/rg --only-matching '(TODO|FIXME):[a-zA-Z0-9\\t .,;?]+'",
+    "reinstall": "npm run --silent delete:node_modules && npm run --silent delete:package-lock && npm i",
+    "reinstall:use-lock-file": "npm run --silent delete:node_modules && npm ci",
+    "validate:formatting": "prettier --check --no-editorconfig .",
+    "validate:formatting:json": "prettier --check --no-editorconfig \"**/*.json\"",
+    "validate:formatting:markdown": "prettier --check --no-editorconfig \"**/*.md\"",
+    "validate:formatting:yaml": "prettier --check --no-editorconfig \"**/*.yml\""
+  },
+  "devDependencies": {
+    "@vscode/ripgrep": "1.14.2",
+    "prettier": "2.6.1"
+  }
+}

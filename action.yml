@@ -1,0 +1,24 @@
+name: mangs/node-modules-super-cache-action
+author: Eric L. Goldstein
+description: GitHub Action that is simple and greatly improves node_modules cache performance over actions/cache
+inputs:
+  node_modules_path:
+    default: "./node_modules"
+    description: Path to one or more node_modules directories
+    required: false
+outputs:
+  cache-hit:
+    description: A boolean value indicating if a match was found in the repository's cache
+    value: ${{ steps.npm-cache.outputs.cache-hit }}
+runs:
+  using: composite
+  steps:
+    - name: Capture NPM version number
+      id: npm-capture
+      run: echo "::set-output name=version-number::$(npm -v)"
+      shell: bash
+    - uses: actions/cache@v3
+      id: npm-cache
+      with:
+        path: ${{ inputs.node_modules_path }}
+        key: ${{ runner.os }}-npm-v${{ steps.npm-capture.outputs.version-number }}-${{ hashFiles('./package-lock.json') }}
