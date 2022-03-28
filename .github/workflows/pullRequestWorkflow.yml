@@ -22,6 +22,3 @@ jobs:
 
       # Task execution
       - run: npm run validate:formatting
-      - uses: mangs/simple-release-notes-action@v1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
