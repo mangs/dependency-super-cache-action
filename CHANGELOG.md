@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- Dogfood this action for this repo's own workflows
+
 ## 1.0.0
 
 - First version of this action
