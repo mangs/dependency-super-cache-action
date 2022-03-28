@@ -1,8 +1,8 @@
 {
   "name": "dependency-super-cache-action",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "author": "Eric L. Goldstein",
-  "description": "GitHub Action that is simple and greatly improves dependency cache performance over actions/cache's recommendations for Node.js projects",
+  "description": "Simple GitHub Action that improves dependency cache performance over actions/cache's recommendations for Node.js projects",
   "keywords": [
     "cache",
     "github action",
