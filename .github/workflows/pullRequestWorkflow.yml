@@ -10,7 +10,7 @@ jobs:
         with:
           node-version: "16.14.2"
       - id: super-cache
-        uses: "/action.yml"
+        uses: ./
       - if: steps.super-cache.outputs.cache-hit != 'true'
         run: npm ci
 
