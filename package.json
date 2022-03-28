@@ -1,6 +1,6 @@
 {
   "name": "node-modules-super-cache-action",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Eric L. Goldstein",
   "description": "GitHub Action that is simple and greatly improves node_modules cache performance over actions/cache",
   "keywords": [
