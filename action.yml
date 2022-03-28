@@ -4,7 +4,7 @@ description: GitHub Action that is simple and greatly improves node_modules cach
 inputs:
   node_modules_path:
     default: "./node_modules"
-    description: Path to one or more node_modules directories
+    description: Path to one or more node_modules directories; can include a glob
     required: false
 outputs:
   cache-hit:
