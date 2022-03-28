@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.0
+
+- Change action name from `node-modules-super-cache-action` to `dependency-super-cache-action` to reflect its use beyond just caching `node_modules`
+- Renamed input parameter `node_modules_path` to `dependencies_to_cache`
+- Changed action and `package.json` description accordingly
+- Added multiline string example to readme
+
 ## 1.0.3
 
 - Readme tweak to the repository description
