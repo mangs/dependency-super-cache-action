@@ -1,2 +1,3 @@
-# node-modules-super-cache-action
-Give your GitHub Actions workflow `node_modules` caching super powers!
+# `mangs/node-modules-super-cache-action`
+
+GitHub Action that is simple and greatly improves `node_modules` cache performance over `actions/cache`
