@@ -34,6 +34,6 @@ Simple GitHub Action that improves cache performance over `actions/cache`'s reco
 
 ## Action Outputs
 
-| Name        | Data Type | Descripition                                                              |
-| ----------- | --------- | ------------------------------------------------------------------------- |
-| `cache-hit` | Boolean   | A boolean value indicating if a match was found in the repository's cache |
+| Name        | Descripition                                                              |
+| ----------- | ------------------------------------------------------------------------- |
+| `cache-hit` | A boolean value indicating if a match was found in the repository's cache |
