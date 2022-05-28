@@ -7,7 +7,7 @@ Simple GitHub Action that improves dependency cache performance over `actions/ca
 ```yaml
 - uses: actions/setup-node@v3
   with:
-    node-version: "16.14.2"
+    node-version: "16.15.0"
 - id: super-cache
   uses: mangs/dependency-super-cache-action@v2
 - if: steps.super-cache.outputs.cache-hit != 'true'
@@ -19,11 +19,11 @@ Simple GitHub Action that improves dependency cache performance over `actions/ca
 ```yaml
 - uses: actions/setup-node@v3
   with:
-    node-version: "16.14.2"
+    node-version: "16.15.0"
 - id: super-cache
   uses: mangs/dependency-super-cache-action@v2
   with:
-    dependencies_to_cache: |
+    cache_targets: |
       ./.eslintcache
       ./node_modules
 - if: steps.super-cache.outputs.cache-hit != 'true'
@@ -32,9 +32,9 @@ Simple GitHub Action that improves dependency cache performance over `actions/ca
 
 ## Action Inputs
 
-| Name                    | Required | Default Value    | Descripition                                                                              |
-| ----------------------- | -------- | ---------------- | ----------------------------------------------------------------------------------------- |
-| `dependencies_to_cache` | N        | `./node_modules` | Single- or multi-line string wherein each line targets a resource to cache; can use globs |
+| Name            | Required | Default Value    | Descripition                                                                              |
+| --------------- | -------- | ---------------- | ----------------------------------------------------------------------------------------- |
+| `cache_targets` | N        | `./node_modules` | Single- or multi-line string wherein each line targets a resource to cache; can use globs |
 
 ## Action Outputs
 
