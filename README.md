@@ -32,9 +32,9 @@ Simple GitHub Action that improves dependency cache performance over `actions/ca
 
 ## Action Inputs
 
-| Name                    | Required | Default Value    | Descripition                                                                                |
-| ----------------------- | -------- | ---------------- | ------------------------------------------------------------------------------------------- |
-| `dependencies_to_cache` | N        | `./node_modules` | Single- or multi-line string wherein each line targets dependencies to cache; can use globs |
+| Name                    | Required | Default Value    | Descripition                                                                              |
+| ----------------------- | -------- | ---------------- | ----------------------------------------------------------------------------------------- |
+| `dependencies_to_cache` | N        | `./node_modules` | Single- or multi-line string wherein each line targets a resource to cache; can use globs |
 
 ## Action Outputs
 

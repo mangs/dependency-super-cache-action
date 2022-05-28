@@ -1,6 +1,6 @@
 {
   "name": "dependency-super-cache-action",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "author": "Eric L. Goldstein",
   "description": "Simple GitHub Action that improves dependency cache performance over actions/cache's recommendations for Node.js projects",
   "keywords": [
@@ -35,6 +35,6 @@
   },
   "devDependencies": {
     "@vscode/ripgrep": "1.14.2",
-    "prettier": "2.6.1"
+    "prettier": "2.6.2"
   }
 }

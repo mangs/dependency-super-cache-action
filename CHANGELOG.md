@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.0.0
+
+- Renamed input parameter `dependencies_to_cache` to `cache_targets` for clarity purposes
+- Updated dependencies
+
 ## 2.0.3
 
 - Update the readme to reference the correct action version; `v1` was mistakenly referenced instead of `v2`
