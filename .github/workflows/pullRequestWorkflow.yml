@@ -14,11 +14,5 @@ jobs:
       - if: steps.super-cache.outputs.cache-hit != 'true'
         run: npm ci
 
-      - uses: actions/setup-node@v3
-      - uses: mangs/super-cache-action@v3
-        id: super-cache
-      - if: steps.super-cache.outputs.cache-hit != 'true'
-        run: npm ci
-
       # Task execution
       - run: npm run validate:formatting
