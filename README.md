@@ -1,15 +1,13 @@
-# `mangs/dependency-super-cache-action`
+# `mangs/super-cache-action`
 
-Simple GitHub Action that improves dependency cache performance over `actions/cache`'s recommendations for Node.js projects
+Simple GitHub Action that improves cache performance over `actions/cache`'s recommendations for Node.js projects
 
 ## Simple Example
 
 ```yaml
 - uses: actions/setup-node@v3
-  with:
-    node-version: "16.15.0"
-- id: super-cache
-  uses: mangs/dependency-super-cache-action@v2
+- uses: mangs/super-cache-action@v3
+  id: super-cache
 - if: steps.super-cache.outputs.cache-hit != 'true'
   run: npm ci
 ```
@@ -18,10 +16,8 @@ Simple GitHub Action that improves dependency cache performance over `actions/ca
 
 ```yaml
 - uses: actions/setup-node@v3
-  with:
-    node-version: "16.15.0"
-- id: super-cache
-  uses: mangs/dependency-super-cache-action@v2
+- uses: mangs/super-cache-action@v3
+  id: super-cache
   with:
     cache_targets: |
       ./.eslintcache

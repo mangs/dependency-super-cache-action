@@ -2,6 +2,7 @@
 
 ## 3.0.0
 
+- Change action name from `dependency-super-cache-action` to `super-cache-action` to reflect its use beyond just caching dependencies (e.g. ESLint cache)
 - Renamed input parameter `dependencies_to_cache` to `cache_targets` for clarity purposes
 - Updated dependencies
 
