@@ -2,7 +2,7 @@ name: mangs/super-cache-action
 author: Eric L. Goldstein
 description: Simple GitHub Action that improves cache performance over actions/cache's recommendations for Node.js projects
 inputs:
-  cache_targets:
+  cache-targets:
     default: "./node_modules"
     description: Single- or multi-line string wherein each line targets a resource to cache; can use globs
     required: false
@@ -20,5 +20,5 @@ runs:
     - uses: actions/cache@v3
       id: npm-cache
       with:
-        path: ${{ inputs.cache_targets }}
+        path: ${{ inputs.cache-targets }}
         key: ${{ runner.os }}-npm-v${{ steps.npm-capture.outputs.version-number }}-${{ hashFiles('./package-lock.json') }}

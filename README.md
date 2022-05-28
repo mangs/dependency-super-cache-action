@@ -19,7 +19,7 @@ Simple GitHub Action that improves cache performance over `actions/cache`'s reco
 - uses: mangs/super-cache-action@v3
   id: super-cache
   with:
-    cache_targets: |
+    cache-targets: |
       ./.eslintcache
       ./node_modules
 - if: steps.super-cache.outputs.cache-hit != 'true'
@@ -30,7 +30,7 @@ Simple GitHub Action that improves cache performance over `actions/cache`'s reco
 
 | Name            | Required | Default Value    | Descripition                                                                              |
 | --------------- | -------- | ---------------- | ----------------------------------------------------------------------------------------- |
-| `cache_targets` | N        | `./node_modules` | Single- or multi-line string wherein each line targets a resource to cache; can use globs |
+| `cache-targets` | N        | `./node_modules` | Single- or multi-line string wherein each line targets a resource to cache; can use globs |
 
 ## Action Outputs
 
