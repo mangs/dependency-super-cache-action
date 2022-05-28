@@ -34,6 +34,6 @@ Simple GitHub Action that improves cache performance over `actions/cache`'s reco
 
 ## Action Outputs
 
-| Name        | Descripition                                                                                                              |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------- |
-| `cache-hit` | A boolean value indicating whether or not `cache-targets` were fetched from cache and applied to the current workflow run |
+| Name        | Descripition                                                                                                  |
+| ----------- | ------------------------------------------------------------------------------------------------------------- |
+| `cache-hit` | A boolean value indicating if `cache-targets` were fetched from cache and applied to the current workflow run |
