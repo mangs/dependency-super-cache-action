@@ -1,10 +1,10 @@
-name: mangs/dependency-super-cache-action
+name: mangs/super-cache-action
 author: Eric L. Goldstein
-description: Simple GitHub Action that improves dependency cache performance over actions/cache's recommendations for Node.js projects
+description: Simple GitHub Action that improves cache performance over actions/cache's recommendations for Node.js projects
 inputs:
-  dependencies_to_cache:
+  cache-targets:
     default: "./node_modules"
-    description: Single- or multi-line string wherein each line targets dependencies to cache; can use globs
+    description: Single- or multi-line string wherein each line targets a resource to cache; can use globs
     required: false
 outputs:
   cache-hit:
@@ -20,5 +20,5 @@ runs:
     - uses: actions/cache@v3
       id: npm-cache
       with:
-        path: ${{ inputs.dependencies_to_cache }}
+        path: ${{ inputs.cache-targets }}
         key: ${{ runner.os }}-npm-v${{ steps.npm-capture.outputs.version-number }}-${{ hashFiles('./package-lock.json') }}

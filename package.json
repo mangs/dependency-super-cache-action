@@ -1,8 +1,8 @@
 {
-  "name": "dependency-super-cache-action",
-  "version": "2.0.3",
+  "name": "super-cache-action",
+  "version": "3.0.0",
   "author": "Eric L. Goldstein",
-  "description": "Simple GitHub Action that improves dependency cache performance over actions/cache's recommendations for Node.js projects",
+  "description": "Simple GitHub Action that improves cache performance over actions/cache's recommendations for Node.js projects",
   "keywords": [
     "cache",
     "github action",
@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mangs/dependency-super-cache-action.git"
+    "url": "git+https://github.com/mangs/super-cache-action.git"
   },
   "engines": {
     "node": ">=16.13.0"
@@ -25,7 +25,7 @@
     "format:code:json": "prettier --write --no-editorconfig \"**/*.json\"",
     "format:code:markdown": "prettier --write --no-editorconfig \"**/*.md\"",
     "format:code:yaml": "prettier --write --no-editorconfig \"**/*.yml\"",
-    "list:todo-comments:ripgrep": "node_modules/@vscode/ripgrep/bin/rg --only-matching '(TODO|FIXME):[a-zA-Z0-9\\t .,;?]+'",
+    "list:todo-comments": "node_modules/@vscode/ripgrep/bin/rg --only-matching '(TODO|FIXME):[a-zA-Z0-9\\t .,;?]+'",
     "reinstall": "npm run --silent delete:node_modules && npm run --silent delete:package-lock && npm i",
     "reinstall:use-lock-file": "npm run --silent delete:node_modules && npm ci",
     "validate:formatting": "prettier --check --no-editorconfig .",
@@ -35,6 +35,6 @@
   },
   "devDependencies": {
     "@vscode/ripgrep": "1.14.2",
-    "prettier": "2.6.1"
+    "prettier": "2.6.2"
   }
 }
