@@ -23,15 +23,15 @@ runs:
       shell: bash
     - if: inputs.package-manager == 'npm'
       id: npm
-      run: echo "::set-output name=hash::${{ hashFiles('./package-lock.json') }}"
+      run: echo "::set-output name=hash::${{ hashFiles('**/package-lock.json') }}"
       shell: bash
     - if: inputs.package-manager == 'pnpm'
       id: pnpm
-      run: echo "::set-output name=hash::${{ hashFiles('./pnpm-lock.yaml') }}"
+      run: echo "::set-output name=hash::${{ hashFiles('**/pnpm-lock.yaml') }}"
       shell: bash
     - if: inputs.package-manager == 'yarn'
       id: yarn
-      run: echo "::set-output name=hash::${{ hashFiles('./yarn.lock') }}"
+      run: echo "::set-output name=hash::${{ hashFiles('**/yarn.lock') }}"
       shell: bash
     - if: inputs.package-manager == 'npm' || inputs.package-manager == 'pnpm' || inputs.package-manager == 'yarn'
       uses: actions/cache@v3
