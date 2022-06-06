@@ -3,22 +3,39 @@ author: Eric L. Goldstein
 description: Simple GitHub Action that improves cache performance over actions/cache's recommendations for Node.js projects
 inputs:
   cache-targets:
-    default: "./node_modules"
+    default: ./node_modules
     description: Single- or multi-line string wherein each line targets a resource to cache; can use globs
+    required: false
+  package-manager:
+    default: npm
+    description: Package manager target for caching operations
     required: false
 outputs:
   cache-hit:
     description: A boolean value indicating if a match was found in the repository's cache
-    value: ${{ steps.npm-cache.outputs.cache-hit }}
+    value: ${{ steps.package-manager-cache.outputs.cache-hit }}
 runs:
   using: composite
   steps:
-    - name: Capture NPM version number
-      id: npm-capture
-      run: echo "::set-output name=version-number::$(npm -v)"
+    - name: Capture package manager version number
+      id: capture
+      run: echo "::set-output name=version-number::$(${{ inputs.package-manager }} --version)"
       shell: bash
-    - uses: actions/cache@v3
-      id: npm-cache
+    - if: inputs.package-manager == 'npm'
+      id: npm
+      run: echo "::set-output name=hash::${{ hashFiles('**/package-lock.json') }}"
+      shell: bash
+    - if: inputs.package-manager == 'pnpm'
+      id: pnpm
+      run: echo "::set-output name=hash::${{ hashFiles('**/pnpm-lock.yaml') }}"
+      shell: bash
+    - if: inputs.package-manager == 'yarn'
+      id: yarn
+      run: echo "::set-output name=hash::${{ hashFiles('**/yarn.lock') }}"
+      shell: bash
+    - if: inputs.package-manager == 'npm' || inputs.package-manager == 'pnpm' || inputs.package-manager == 'yarn'
+      uses: actions/cache@v3
+      id: package-manager-cache
       with:
         path: ${{ inputs.cache-targets }}
-        key: ${{ runner.os }}-npm-v${{ steps.npm-capture.outputs.version-number }}-${{ hashFiles('./package-lock.json') }}
+        key: ${{ runner.os }}-${{ inputs.package-manager }}-v${{ steps.capture.outputs.version-number }}-${{ steps.npm.outputs.hash }}${{ steps.pnpm.outputs.hash }}${{ steps.yarn.outputs.hash }}

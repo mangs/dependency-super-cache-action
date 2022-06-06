@@ -28,9 +28,10 @@ Simple GitHub Action that improves cache performance over `actions/cache`'s reco
 
 ## Action Inputs
 
-| Name            | Required | Default Value    | Descripition                                                                              |
-| --------------- | -------- | ---------------- | ----------------------------------------------------------------------------------------- |
-| `cache-targets` | N        | `./node_modules` | Single- or multi-line string wherein each line targets a resource to cache; can use globs |
+| Name              | Required | Default Value    | Descripition                                                                              |
+| ----------------- | -------- | ---------------- | ----------------------------------------------------------------------------------------- |
+| `cache-targets`   | N        | `./node_modules` | Single- or multi-line string wherein each line targets a resource to cache; can use globs |
+| `package-manager` | N        | `npm`            | Package manager target for caching operations                                             |
 
 ## Action Outputs
 
