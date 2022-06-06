@@ -21,23 +21,18 @@ runs:
       id: capture
       run: echo "::set-output name=version-number::$(${{ inputs.package-manager }} --version)"
       shell: bash
-    # - name: Capture NPM version number
-    #   id: npm-capture
-    #   run: echo "::set-output name=version-number::$(${{ inputs.package-manager }} --version)"
-    #   shell: bash
-    # - if: inputs.package-manager == "pnpm"
-    #   name: Capture PNPM version number
-    #   id: pnpm-capture
-    #   run: echo "::set-output name=version-number::$(pnpm --version)"
-    #   shell: bash
-    # - if: inputs.package-manager == "yarn"
-    #   name: Capture Yarn version number
-    #   id: yarn-capture
-    #   run: echo "::set-output name=version-number::$(yarn --version)"
-    #   shell: bash
+    - if: inputs.package-manager == 'npm'
+      id: npm
+      run: echo "::set-output name=hash::${{ hashFiles('./package-lock.json') }}"
+    - if: inputs.package-manager == 'pnpm'
+      id: pnpm
+      run: echo "::set-output name=hash::${{ hashFiles('./pnpm-lock.yaml') }}"
+    - if: inputs.package-manager == 'yarn'
+      id: yarn
+      run: echo "::set-output name=hash::${{ hashFiles('./yarn.lock') }}"
     - if: inputs.package-manager == 'npm' || inputs.package-manager == 'pnpm' || inputs.package-manager == 'yarn'
       uses: actions/cache@v3
       id: package-manager-cache
       with:
         path: ${{ inputs.cache-targets }}
-        key: ${{ runner.os }}-${{ inputs.package-manager }}-v${{ steps.capture.outputs.version-number }}-${{ hashFiles('./package-lock.json') }}
+        key: ${{ runner.os }}-${{ inputs.package-manager }}-v${{ steps.capture.outputs.version-number }}-${{ steps.npm.outputs.hash }}${{ steps.pnpm.outputs.hash }}${{ steps.yarn.outputs.hash }}
