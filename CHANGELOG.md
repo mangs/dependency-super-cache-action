@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.1.0
+
+- Add support for choosing either `npm`, `pnpm`, or `yarn` as the package manager target for caching
+- Update workflows to use `mangs/simple-release-notes-action@v2` and Node.js version `16.15.1`
+
 ## 3.0.0
 
 - Change action name from `dependency-super-cache-action` to `super-cache-action` to reflect its use beyond just caching dependencies (e.g. ESLint cache)
