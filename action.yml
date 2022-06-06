@@ -35,7 +35,7 @@ runs:
     #   id: yarn-capture
     #   run: echo "::set-output name=version-number::$(yarn --version)"
     #   shell: bash
-    - if: inputs.package-manager == "npm" || inputs.package-manager == "pnpm" || inputs.package-manager == "yarn"
+    - if: inputs.package-manager == 'npm' || inputs.package-manager == 'pnpm' || inputs.package-manager == 'yarn'
       uses: actions/cache@v3
       id: package-manager-cache
       with:
