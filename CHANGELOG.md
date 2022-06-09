@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.1
+
+- Update documentation about `cache-hit` to be more clear about its data type and possible values
+
 ## 3.1.0
 
 - Add support for choosing either `npm`, `pnpm`, or `yarn` as the package manager target for caching

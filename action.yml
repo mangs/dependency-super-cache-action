@@ -12,7 +12,7 @@ inputs:
     required: false
 outputs:
   cache-hit:
-    description: A boolean value indicating if a match was found in the repository's cache
+    description: A string containing either 'true' or 'false' indicating if 'cache-targets' were fetched from cache and applied to the current workflow run
     value: ${{ steps.package-manager-cache.outputs.cache-hit }}
 runs:
   using: composite
