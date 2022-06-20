@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.2
+
+- Update dependencies
+
 ## 3.1.1
 
 - Update documentation about `cache-hit` to be more clear about its data type and possible values
