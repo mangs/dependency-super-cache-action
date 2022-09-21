@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.1.3
+
+- Updated workflows to use operating system `ubuntu-22.04` and Node.js version `16.17.0`
+- Added the [`packageManager` field to `package.json`](https://nodejs.org/dist/latest-v16.x/docs/api/all.html#all_packages_packagemanager) to enforce the use of NPM version `8.15.0` for environments with [Corepack](https://nodejs.org/dist/latest-v16.x/docs/api/corepack.html) enabled
+- Update dependencies to latest
+
 ## 3.1.2
 
 - Update dependencies
