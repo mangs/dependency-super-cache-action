@@ -3,12 +3,12 @@ on: pull_request
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: "16.15.1"
+          node-version: "16.17.0"
       - name: Run mangs/super-cache-action
         uses: ./
         id: super-cache
