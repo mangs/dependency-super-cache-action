@@ -1,6 +1,6 @@
 {
   "name": "super-cache-action",
-  "version": "3.1.3",
+  "version": "3.1.4",
   "author": "Eric L. Goldstein",
   "description": "Simple GitHub Action that improves cache performance over actions/cache's recommendations for Node.js projects",
   "keywords": [
@@ -23,19 +23,13 @@
     "delete:node_modules": "rm -rf node_modules",
     "delete:package-lock": "rm -f package-lock.json",
     "format:code": "prettier --write --no-editorconfig .",
-    "format:code:json": "prettier --write --no-editorconfig \"**/*.json\"",
-    "format:code:markdown": "prettier --write --no-editorconfig \"**/*.md\"",
-    "format:code:yaml": "prettier --write --no-editorconfig \"**/*.yml\"",
     "list:todo-comments": "node_modules/@vscode/ripgrep/bin/rg --only-matching '(TODO|FIXME):[a-zA-Z0-9\\t .,;?]+'",
     "reinstall": "npm run --silent delete:node_modules && npm run --silent delete:package-lock && npm i",
     "reinstall:use-lock-file": "npm run --silent delete:node_modules && npm ci",
-    "validate:formatting": "prettier --check --no-editorconfig .",
-    "validate:formatting:json": "prettier --check --no-editorconfig \"**/*.json\"",
-    "validate:formatting:markdown": "prettier --check --no-editorconfig \"**/*.md\"",
-    "validate:formatting:yaml": "prettier --check --no-editorconfig \"**/*.yml\""
+    "validate:formatting": "prettier --check --no-editorconfig ."
   },
   "devDependencies": {
-    "@vscode/ripgrep": "1.14.2",
-    "prettier": "2.7.1"
+    "@vscode/ripgrep": "1.15.0",
+    "prettier": "2.8.7"
   }
 }

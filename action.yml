@@ -19,19 +19,19 @@ runs:
   steps:
     - name: Capture package manager version number
       id: capture
-      run: echo "::set-output name=version-number::$(${{ inputs.package-manager }} --version)"
+      run: echo "version-number=$(${{ inputs.package-manager }} --version)" >> $GITHUB_OUTPUT
       shell: bash
     - if: inputs.package-manager == 'npm'
       id: npm
-      run: echo "::set-output name=hash::${{ hashFiles('**/package-lock.json') }}"
+      run: echo "hash=${{ hashFiles('**/package-lock.json') }}" >> $GITHUB_OUTPUT
       shell: bash
     - if: inputs.package-manager == 'pnpm'
       id: pnpm
-      run: echo "::set-output name=hash::${{ hashFiles('**/pnpm-lock.yaml') }}"
+      run: echo "hash=${{ hashFiles('**/pnpm-lock.yaml') }}" >> $GITHUB_OUTPUT
       shell: bash
     - if: inputs.package-manager == 'yarn'
       id: yarn
-      run: echo "::set-output name=hash::${{ hashFiles('**/yarn.lock') }}"
+      run: echo "hash=${{ hashFiles('**/yarn.lock') }}" >> $GITHUB_OUTPUT
       shell: bash
     - if: inputs.package-manager == 'npm' || inputs.package-manager == 'pnpm' || inputs.package-manager == 'yarn'
       uses: actions/cache@v3
