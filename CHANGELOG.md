@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.1.4
+
+- Replaced the use of `set-output` with [the new environment files syntax](https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/)
+- Update dependencies to latest
+
 ## 3.1.3
 
 - Updated workflows to use operating system `ubuntu-22.04` and Node.js version `16.17.0`
