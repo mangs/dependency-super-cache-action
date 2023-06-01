@@ -2,6 +2,10 @@ name: mangs/super-cache-action
 author: Eric L. Goldstein
 description: Simple GitHub Action that improves cache performance over actions/cache's recommendations for Node.js projects
 inputs:
+  cache-key-suffix:
+    default: ""
+    description: String appended to the end of the auto-generated cache key that allows for cache key customization (e.g. separate development and production caches with the latter using `npm ci --production`)
+    required: false
   cache-targets:
     default: ./node_modules
     description: Single- or multi-line string wherein each line targets a resource to cache; can use globs
@@ -38,4 +42,4 @@ runs:
       id: package-manager-cache
       with:
         path: ${{ inputs.cache-targets }}
-        key: ${{ runner.os }}-${{ inputs.package-manager }}-v${{ steps.capture.outputs.version-number }}-${{ steps.npm.outputs.hash }}${{ steps.pnpm.outputs.hash }}${{ steps.yarn.outputs.hash }}
+        key: ${{ runner.os }}-${{ inputs.package-manager }}-v${{ steps.capture.outputs.version-number }}-${{ steps.npm.outputs.hash }}${{ steps.pnpm.outputs.hash }}${{ steps.yarn.outputs.hash }}-${{ inputs.cache-key-suffix }}

@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.2.0
+
+- Added action input `cache-key-suffix` to allow for cache key customization (e.g. separate development and production caches with the latter using `npm ci --production`)
+- Updated to Node.js `18.16.0` for dependency installs and in workflows
+- Update dependencies to latest
+
 ## 3.1.4
 
 - Replaced the use of `set-output` with [the new environment files syntax](https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/)
