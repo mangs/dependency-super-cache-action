@@ -12,6 +12,32 @@ Simple GitHub Action that improves cache performance over `actions/cache`'s reco
   run: npm ci
 ```
 
+## Custom Cache Key Example
+
+```yaml
+# ...
+# Job 1: production deploy using a matrix strategy
+- uses: actions/setup-node@v3
+- uses: mangs/super-cache-action@v3
+  id: super-cache
+  with:
+    cache-key-suffix: production-deploy
+- if: steps.super-cache.outputs.cache-hit != 'true'
+  run: npm ci --production
+# ...
+
+# ...
+# Job 2: linting and unit testing using a matrix strategy
+- uses: actions/setup-node@v3
+- uses: mangs/super-cache-action@v3
+  id: super-cache
+  with:
+    cache-key-suffix: linting-and-unit-tests
+- if: steps.super-cache.outputs.cache-hit != 'true'
+  run: npm ci
+# ...
+```
+
 ## Multiline Dependencies Example
 
 ```yaml
@@ -28,10 +54,11 @@ Simple GitHub Action that improves cache performance over `actions/cache`'s reco
 
 ## Action Inputs
 
-| Name              | Required | Default Value    | Descripition                                                                              |
-| ----------------- | -------- | ---------------- | ----------------------------------------------------------------------------------------- |
-| `cache-targets`   | N        | `./node_modules` | Single- or multi-line string wherein each line targets a resource to cache; can use globs |
-| `package-manager` | N        | `npm`            | Package manager target for caching operations                                             |
+| Name               | Required | Default Value    | Descripition                                                                                                                                                                                     |
+| ------------------ | -------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `cache-key-suffix` | N        | `<empty-string>` | String appended to the end of the auto-generated cache key that allows for cache key customization (e.g. separate development and production caches with the latter using `npm ci --production`) |
+| `cache-targets`    | N        | `./node_modules` | Single- or multi-line string wherein each line targets a resource to cache; can use globs                                                                                                        |
+| `package-manager`  | N        | `npm`            | Package manager target for caching operations                                                                                                                                                    |
 
 ## Action Outputs
 
