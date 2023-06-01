@@ -16,7 +16,7 @@ Simple GitHub Action that improves cache performance over `actions/cache`'s reco
 
 ```yaml
 # ...
-# Job 1 using a matrix strategy
+# Job 1: production deploy using a matrix strategy
 - uses: actions/setup-node@v3
 - uses: mangs/super-cache-action@v3
   id: super-cache
@@ -27,7 +27,7 @@ Simple GitHub Action that improves cache performance over `actions/cache`'s reco
 # ...
 
 # ...
-# Job 2 using a matrix strategy
+# Job 2: linting and unit testing using a matrix strategy
 - uses: actions/setup-node@v3
 - uses: mangs/super-cache-action@v3
   id: super-cache
