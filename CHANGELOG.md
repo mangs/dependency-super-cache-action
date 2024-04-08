@@ -10,6 +10,7 @@
   - `mangs/simple-release-notes-action`: `v2` -> `v3`
 - Rename `package.json` script `validate:formatting` to `check:formatting`
 - Remove dependency `@vscode/ripgrep` due to unreliable installs; use local Ripgrep version instead
+- Add pull request template file
 - Update dependencies to latest
 
 ## 3.2.0
