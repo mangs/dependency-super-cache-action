@@ -1,6 +1,6 @@
 {
   "name": "super-cache-action",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "author": "Eric L. Goldstein",
   "description": "Simple GitHub Action that improves cache performance over actions/cache's recommendations for Node.js projects",
   "keywords": [
@@ -16,20 +16,19 @@
     "url": "git+https://github.com/mangs/super-cache-action.git"
   },
   "engines": {
-    "node": ">=16.13.0"
+    "node": ">=20.9.0"
   },
-  "packageManager": "npm@9.5.1",
+  "packageManager": "npm@10.2.4",
   "scripts": {
+    "check:formatting": "prettier --check --no-editorconfig .",
     "delete:node_modules": "rm -rf node_modules",
     "delete:package-lock": "rm -f package-lock.json",
     "format:code": "prettier --write --no-editorconfig .",
-    "list:todo-comments": "node_modules/@vscode/ripgrep/bin/rg --only-matching '(TODO|FIXME):[a-zA-Z0-9\\t .,;?]+'",
+    "list:todo-comments": "rg --only-matching '(TODO|FIXME):[a-zA-Z0-9\\t .,;?-]+'",
     "reinstall": "npm run --silent delete:node_modules && npm run --silent delete:package-lock && npm i",
-    "reinstall:use-lock-file": "npm run --silent delete:node_modules && npm ci",
-    "validate:formatting": "prettier --check --no-editorconfig ."
+    "reinstall:use-lock-file": "npm run --silent delete:node_modules && npm ci"
   },
   "devDependencies": {
-    "@vscode/ripgrep": "1.15.3",
-    "prettier": "2.8.8"
+    "prettier": "3.2.5"
   }
 }
