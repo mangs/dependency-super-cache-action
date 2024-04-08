@@ -1,5 +1,18 @@
 # Changelog
 
+## 3.3.0
+
+- Update major tag version on publish automatically with upgrade to `mangs/simple-release-notes-action@v3`
+- Update GitHub action workflow target Node.js version from `18.16.0` to `20.11.1`
+- Update action versions in GitHub actions workflows
+  - `actions/checkout`: `v3` -> `v4`
+  - `actions/setup-node`: `v3` -> `v4`
+  - `mangs/simple-release-notes-action`: `v2` -> `v3`
+- Rename `package.json` script `validate:formatting` to `check:formatting`
+- Remove dependency `@vscode/ripgrep` due to unreliable installs; use local Ripgrep version instead
+- Add pull request template file
+- Update dependencies to latest
+
 ## 3.2.0
 
 - Added action input `cache-key-suffix` to allow for cache key customization (e.g. separate development and production caches with the latter using `npm ci --production`)
