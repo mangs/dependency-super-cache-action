@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.4.0
+
+- Update `actions/cache` in `action.yml` from `v3` to `v4`
+- Update local development NPM version from `10.2.4` to `10.8.2`
+- Update dependencies to latest
+
 ## 3.3.0
 
 - Update major tag version on publish automatically with upgrade to `mangs/simple-release-notes-action@v3`

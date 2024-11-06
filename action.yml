@@ -38,7 +38,7 @@ runs:
       run: echo "hash=${{ hashFiles('**/yarn.lock') }}" >> $GITHUB_OUTPUT
       shell: bash
     - if: inputs.package-manager == 'npm' || inputs.package-manager == 'pnpm' || inputs.package-manager == 'yarn'
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       id: package-manager-cache
       with:
         path: ${{ inputs.cache-targets }}

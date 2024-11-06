@@ -1,6 +1,6 @@
 {
   "name": "super-cache-action",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "author": "Eric L. Goldstein",
   "description": "Simple GitHub Action that improves cache performance over actions/cache's recommendations for Node.js projects",
   "keywords": [
@@ -18,7 +18,7 @@
   "engines": {
     "node": ">=20.9.0"
   },
-  "packageManager": "npm@10.2.4",
+  "packageManager": "npm@10.8.2",
   "scripts": {
     "check:formatting": "prettier --check --no-editorconfig .",
     "delete:node_modules": "rm -rf node_modules",
@@ -29,6 +29,6 @@
     "reinstall:use-lock-file": "npm run --silent delete:node_modules && npm ci"
   },
   "devDependencies": {
-    "prettier": "3.2.5"
+    "prettier": "3.3.3"
   }
 }
